@@ -1,4 +1,4 @@
-import socket, sys
+import socket
 
 class Client:
     def __init__(self):
@@ -6,13 +6,8 @@ class Client:
 
 
     def connect(self):
-        if len(sys.argv) < 3:
-            exit()
-
-        host = sys.argv[1]
-        port = sys.argv[2]
         try:
-            self.tcp_client.connect((host, int(port)))
+            self.tcp_client.connect(("localhost", 8641))
         except:
             print("server not responding, exiting")
             return False
